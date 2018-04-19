@@ -11,7 +11,20 @@ Ce repo contient, dans chacun des 3 répertoires `./builds-*`, une recette de bu
 
 # Dépendances
 
-Pour réaliser l'automatisation de ce build, cette recette fait usage d'un [composant .Net Service Windows](https://docs.microsoft.com/fr-fr/dotnet/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer) 
+## builds auto - windows runner wrapper
+
+Pour réaliser l'automatisation du build [`builds-java-dotnet-windows-service`], cette recette fait usage d'un [composant .Net Windows Console Application](https://docs.microsoft.com/fr-fr/dotnet/standard/building-console-apps) 
+* le [code source](https://github.com/Jean-Baptiste-Lasselle/java-windows-dot-net-runner-packaging) de ce composant est télchargé
+* le code source est compilé en ligne de commande automatisé, pour produire ladite application Console Windows.
+* On peut aussi partir du composant déjà compilé.
+* Il suffit ensuite d'utiliser le composant en changeant les valeurs des paramètres passés à l'exécution (par exemple en les chargeant d'un fichier ini), pour changer:
+  * le chemin absolu du fichier jar exécutable
+  * le chemin absolu de l'exécutable java.exe (ou le `JRE_HOME`)
+  * la liste des paramètres à passer en paramètre de l'exécution `java -jar mon-application-packagee.jar` : options système la JVM (Memory, CPU), propriétés java etc...
+  
+## builds auto - windows service wrapper  
+
+Pour réaliser l'automatisation du build [`builds-java-dotnet-windows-service`], cette recette fait usage d'un [composant .Net Service Windows](https://docs.microsoft.com/fr-fr/dotnet/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer) 
 * le [code source](https://github.com/Jean-Baptiste-Lasselle/java-windows-dot-net-service-packaging) de ce composant est télchargé
 * le code source est compilé en ligne de commande automatisé, pour produire ledit service Windows.
 * On peut aussi partir du composant déjà compilé.
